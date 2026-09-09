@@ -5,19 +5,19 @@ import { PolicyDialogs } from "./PolicyDialogs";
 import { ProductName } from "./ProductName";
 
 const navItems = [
-  ["About Us", "/#about", "about"], ["Brand", "/#story", "story"], ["QT easycare", "/product", "product"],
-  ["Product Information", "/product#information", "information"], ["How to Use", "/product#usage", "usage"], ["Contact", "/#contact", "contact"],
+  ["Brand", "/#story", "story"], ["QT easycare", "/product", "product"],
+  ["Product Information", "/product#information", "information"], ["How to Use", "/product#usage", "usage"], ["About Us", "/#about", "about"], ["Contact", "/#contact", "contact"],
 ];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   useEffect(() => {
-    const update = () => setActive(window.location.pathname === "/" ? window.location.hash.slice(1) : window.location.pathname.slice(1));
+    const update = () => setActive(window.location.pathname === "/" ? (window.location.hash.slice(1) || "story") : window.location.pathname.slice(1));
     update(); window.addEventListener("hashchange", update); return () => window.removeEventListener("hashchange", update);
   }, []);
   return <header className="site-header">
-    <a className="logo-link" href="/#about" aria-label="AINFBIO 메인 페이지"><img src="/assets/ainfbio-logo.png" alt="AINFBIO 앙프바이오 로고" /></a>
+    <a className="logo-link" href="/#story" aria-label="AINFBIO 메인 페이지"><img src="/assets/ainfbio-logo.png" alt="AINFBIO 앙프바이오 로고" /></a>
     <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}><span /><span /><span /><b>메뉴</b></button>
     <nav id="primary-navigation" aria-label="주요 메뉴" className={open ? "open" : ""}>
       {navItems.map(([label, href, key]) => <a key={key} href={href} className={active === key ? "active" : ""} onClick={() => setOpen(false)}>{key === "product" ? <ProductName className="qt-wordmark--nav" /> : label}</a>)}
@@ -28,7 +28,7 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return <footer className="site-footer"><div className="wrap footer-grid">
-    <div className="footer-brand"><a href="/#about" aria-label="AINFBIO 메인 페이지">AINFBIO</a><p>Science in Motion, Care in One Minute.</p></div>
+    <div className="footer-brand"><a href="/#story" aria-label="AINFBIO 메인 페이지">AINFBIO</a><p>Science in Motion, Care in One Minute.</p></div>
     <div className="business-info"><p><b>상호명</b> 앙프바이오</p><p><b>대표자</b> 조연우</p>
       <p><b>사업자등록번호</b> 782-12-00920</p>
       <p><b>통신판매업신고번호</b> 제 2018-진건퇴계원-0274호</p>
