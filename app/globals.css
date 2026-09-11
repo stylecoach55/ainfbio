@@ -92,9 +92,13 @@
 @media(max-width:760px){
   .home-product-image--campaign,.product-detail-package--campaign{padding:0;overflow:visible}
   .home-product-image--campaign img,.product-detail-package--campaign img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
-  .story{position:relative;isolation:isolate;background-image:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.7)),url("/assets/story-source.png");background-size:cover;background-position:60% center}
-  .story>.section-intro,.story>.story-opening,.story>.story-visual{position:relative;z-index:1}
-  .story-visual{background:transparent}
-  .story-visual:after{background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.28) 48%,rgba(255,255,255,.08) 82%)}
+  .story{background-image:none}
+  .story-visual{min-height:390px;aspect-ratio:4/5;background:var(--ice)}
+  .story-visual img{object-position:58% center}
+  .story-visual:after{background:linear-gradient(180deg,rgba(255,255,255,.76) 0%,rgba(255,255,255,.36) 38%,rgba(255,255,255,.04) 78%)}
 }
+
+/* Keep the ion message in its intended two semantic lines at every viewport. */
+.ion-story-head h3 span{display:block;white-space:nowrap}.ion-story-head h3 span+span{margin-top:4px;margin-left:clamp(0px,3vw,42px)}
+@media(max-width:760px){.ion-story-head h3{font-size:clamp(18px,5.5vw,28px);line-height:1.35}.ion-story-head h3 span+span{margin-left:0;margin-top:5px}}
 
