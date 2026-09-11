@@ -88,3 +88,13 @@
 @media(max-width:1000px) and (min-width:761px){.story{grid-template-columns:minmax(270px,.85fr) minmax(0,1.15fr)}.story-visual{height:460px;max-height:none;margin:0}.story-visual figcaption strong{font-size:clamp(24px,3vw,30px)}.story-lead{font-size:clamp(20px,2.4vw,24px)}.story-opening>p:last-child{font-size:15px}}
 @media(max-width:760px){.story-opening{margin-top:28px}.story-visual{margin-top:28px}.story-visual figcaption{top:28px}.story-visual figcaption strong{font-size:clamp(23px,6.5vw,30px);line-height:1.38}.story-visual figcaption>span{margin-top:16px;font-size:clamp(15px,4.2vw,18px)}}
 
+/* Mobile: preserve campaign artwork and let the Brand Story image support the full opening. */
+@media(max-width:760px){
+  .home-product-image--campaign,.product-detail-package--campaign{padding:0;overflow:visible}
+  .home-product-image--campaign img,.product-detail-package--campaign img{display:block;width:100%;height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
+  .story{position:relative;isolation:isolate;background-image:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.7)),url("/assets/story-source.png");background-size:cover;background-position:60% center}
+  .story>.section-intro,.story>.story-opening,.story>.story-visual{position:relative;z-index:1}
+  .story-visual{background:transparent}
+  .story-visual:after{background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.28) 48%,rgba(255,255,255,.08) 82%)}
+}
+
