@@ -102,3 +102,6 @@
 .ion-story-head h3 span{display:block;white-space:nowrap}.ion-story-head h3 span+span{margin-top:4px;margin-left:clamp(0px,3vw,42px)}
 @media(max-width:760px){.ion-story-head h3{font-size:clamp(18px,5.5vw,28px);line-height:1.35}.ion-story-head h3 span+span{margin-left:0;margin-top:5px}}
 
+
+/* Clear disclosure for AI-generated virtual people in advertising images. */
+.home-product-image--campaign,.product-detail-package--campaign{position:relative}.ai-image-label{position:absolute;z-index:3;right:12px;bottom:12px;display:block;padding:6px 9px;border:1px solid rgba(255,255,255,.58);border-radius:2px;background:rgba(18,25,67,.74);color:#fff;font-size:11px;line-height:1.35;letter-spacing:-.02em;box-shadow:0 2px 8px rgba(0,0,0,.16)}.moment-grid-lifestyle .ai-image-label{right:14px;bottom:14px}.moment-grid-lifestyle .moment-content{padding-bottom:56px}@media(max-width:760px){.ai-image-label{right:10px;bottom:10px;padding:5px 7px;font-size:10px}.moment-grid-lifestyle .ai-image-label{right:12px;bottom:12px}.moment-grid-lifestyle .moment-content{padding-bottom:52px}}
